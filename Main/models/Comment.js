@@ -1,48 +1,46 @@
-// UPDATE WITH LOGIN / AUTHENTICATION INFO
-
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-const bcrypt = require("bcrypt");
 
-class User extends Model {
-  //check password will go here
-}
+class Comment extends Model {}
 
-User.init(
+Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
+      allowNull: false,
       autoIncrement: true,
     },
-    username: {
-      type: DataTypes.STRING,
+    user_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
+      references: {
+        model: "user",
+        key: "id",
       },
     },
-    password: {
+    post_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "post",
+        key: "id",
+      },
+    },
+    comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [4],
+        len: [1],
       },
     },
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "comment",
   }
 );
 
-module.exports = User;
+module.exports = Comment;

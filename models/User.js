@@ -1,4 +1,3 @@
-// UPDATE WITH LOGIN / AUTHENTICATION INFO
 
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");

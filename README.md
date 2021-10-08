@@ -2,7 +2,10 @@
 
 ## Overview
 
+*signup/login routes not fully working yet
+
 A CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts.  
+
 
 ## User Story
 
@@ -11,6 +14,12 @@ AS A developer who writes about tech
 I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ```
+![Screen Shot 2021-10-07 at 6 19 12 PM](https://user-images.githubusercontent.com/80792196/136483383-370db124-c4c5-4f3e-851b-590354d5aac7.png)
+
+![Screen Shot 2021-10-07 at 6 19 21 PM](https://user-images.githubusercontent.com/80792196/136483392-62e003c3-e7c7-44a5-9064-64b23557fe42.png)
+
+![Screen Shot 2021-10-07 at 6 19 27 PM](https://user-images.githubusercontent.com/80792196/136483396-41b04877-6e67-46d7-ab8f-6771396592b7.png)
+
 
 ## Criteria
 

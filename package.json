@@ -15,7 +15,9 @@
     "nodemon": "^2.0.13",
     "sequelize": "^6.6.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/express-session": "^1.17.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node seeds index.js && node server.js"

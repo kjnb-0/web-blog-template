@@ -3,9 +3,11 @@
 ## Overview
 
 *signup/login routes not fully working yet
+*I think it is an issue with express-session package that I haven't been able to figure out 
 
 A CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts.  
 
+Deployed on Heroku https://infinite-ocean-12647.herokuapp.com/
 
 ## User Story
 

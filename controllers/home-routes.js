@@ -4,6 +4,7 @@ const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 
+
 router.get("/", (req, res) => {
   console.log(req.session);
 
@@ -28,7 +29,13 @@ router.get("/", (req, res) => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
       res.render("homepage", {
         posts,
-        loggedIn: req.session.loggedIn,
+        _loggedIn: req.session.loggedIn,
+        get loggedIn() {
+          return this._loggedIn;
+        },
+        set loggedIn(value) {
+          this._loggedIn = value;
+        },
       });
     })
     .catch(err => {

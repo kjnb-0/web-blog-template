@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Post, User, Comment } = require("../models");
+const withAuth = require("../utils/auth");
+
 
 router.get("/", (req, res) => {
   console.log(req.session);
@@ -23,13 +25,13 @@ router.get("/", (req, res) => {
     ],
   })
     .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
+      const posts = dbPostData.map(post => post.get({ plain: true }));
       res.render("homepage", {
         posts,
         loggedIn: req.session.loggedIn,
       });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -40,7 +42,6 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-
   res.render("login");
 });
 
@@ -49,7 +50,6 @@ router.get("/signup", (req, res) => {
     res.redirect("/");
     return;
   }
-
   res.render("signup");
 });
 
@@ -87,7 +87,7 @@ router.get("/post/:id", (req, res) => {
         loggedIn: req.session.loggedIn,
       });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });

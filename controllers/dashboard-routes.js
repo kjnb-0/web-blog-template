@@ -24,11 +24,11 @@ router.get("/", withAuth, (req, res) => {
       },
     ],
   })
-    .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
+    .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({ plain: true }));
       res.render("dashboard", { posts, loggedIn: true });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -55,7 +55,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
       },
     ],
   })
-    .then((dbPostData) => {
+    .then(dbPostData => {
       if (!dbPostData) {
         res.status(404).json({ message: "No post found" });
         return;
@@ -68,7 +68,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
         loggedIn: true,
       });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -95,11 +95,11 @@ router.get("/create/", withAuth, (req, res) => {
       },
     ],
   })
-    .then((dbPostData) => {
+    .then(dbPostData => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       res.render("add-post", { posts, loggedIn: true });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
